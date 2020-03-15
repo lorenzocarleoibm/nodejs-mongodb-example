@@ -1,0 +1,47 @@
+spring.datasource.username	root
+spring.datasource.url		jdbc:mariadb://172.21.244.134:3306/ISHCLASSICREGISTERDB
+
+
+
+kind: Secret
+apiVersion: v1
+metadata:
+  name: mariadb
+  namespace: poc-ish
+  selfLink: /api/v1/namespaces/poc-ish/secrets/mariadb
+  uid: 0657b146-26f5-49c4-aed8-7a6d2a2a6551
+  resourceVersion: '15972226'
+  creationTimestamp: '2020-03-11T15:01:58Z'
+  labels:
+    template: mariadb-persistent-template
+    template.openshift.io/template-instance-owner: babd6836-ef05-4d67-8f66-20cd4a81be35
+  annotations:
+    template.openshift.io/expose-database_name: '{.data[''database-name'']}'
+    template.openshift.io/expose-password: '{.data[''database-password'']}'
+    template.openshift.io/expose-root_password: '{.data[''database-root-password'']}'
+    template.openshift.io/expose-username: '{.data[''database-user'']}'
+data:
+  database-name: c2FtcGxlZGI=
+  database-password: R2dTOFF4akhBUExiaDVIYg==
+  database-root-password: UFdPTDRVNzBMU3RoaDZQdQ==
+  database-user: dXNlcjVJMg==
+type: Opaque
+
+
+data:
+  database-name: SVNIQ0xBU1NJQ1JFR0lTVEVSREIK
+  database-password: R2dTOFF4akhBUExiaDVIYg==
+  database-root-password: cm9vdAo=
+  database-user: cm9vdAo=
+type: Opaque
+
+
+CREATE TABLE pages
+( id INT(5) NOT NULL AUTO_INCREMENT,
+  code INT(11) NOT NULL,
+  employee VARCHAR(45) NOT NULL DEFAULT 'IBM',
+  PRIMARY KEY (id)
+);
+
+
+INSERT INTO pages VALUES (1234, "code"), (lorenzo, "employee");
